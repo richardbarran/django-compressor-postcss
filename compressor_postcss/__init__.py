@@ -1,13 +1,16 @@
 from django.conf import settings
 from compressor.filters import CompilerFilter
 
-
 DEFAULT_BINARY = "postcss"
 DEFAULT_ARGS = " "
 DEFAULT_PLUGINS = ()
 
 
 class PostCSSFilter(CompilerFilter):
+    cwd = getattr(settings, "COMPRESS_POSTCSS_CWD", None)
+
+    def __init__(self, content, command=None, **kwargs):
+        super().__init__(content, **kwargs)
 
     def plugins_as_args(plugins):
         """

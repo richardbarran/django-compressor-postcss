@@ -43,3 +43,5 @@ COMPRESS_POSTCSS_PLUGINS = (
 ```
 
 `COMPRESS_POSTCSS_PLUGINS` determines the plugins that PostCSS will use.
+
+`COMPRESS_POSTCSS_CWD` sets the directory in which the binary is run.
